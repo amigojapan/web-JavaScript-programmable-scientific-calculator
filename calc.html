@@ -1,7 +1,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="calc_modified.css">
+<style>
+input{font-size: 17pt;}
+</style>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -17,117 +19,108 @@
 </script>
 </head>
 <body>
-<script src="main.js"></script>
-<nav class="navbar">
-		<span class="navbar-toggle" id="js-navbar-toggle">
-				<i class="fas fa-bars"></i>
-		</span>
-		<img src="icons8-open-box-64.png"> 
-		<ul class="main-nav" id="js-menu">
-				<li>
-						<a href="calc.html" class="nav-links">Scientific Calculator </a>
-				</li>
-				<li>
-						<a href="#" class="nav-links">Other</a>
-				</li>
-				<li>
-						<a href="github-url-here" class="nav-links">Contribute</a>
-				</li>
-				<li>
-						<a href="contactus.html" class="nav-links">Contact Us</a>
-				</li>
-				
-		</ul>
-</nav>
-
-
-<div class="calculator">
-
-<textarea ID="funct" >
+<script type="text/javascript">
+function clear_() {
+	document.getElementById('display').value="0";
+}
+function append(value) {
+	if(document.getElementById('display').value==0) document.getElementById('display').value="";
+	document.getElementById('display').value=document.getElementById('display').value + value;
+}
+function evaluate_() {
+	var eq=document.getElementById('display').value;
+	if (eq!=null && eq!="") {
+		eq=eq.replace("π","Math.PI");
+		eq=eq.replace("euler","Math.E");
+		eq=eq.replace("ln2","Math.LN2");
+		eq=eq.replace("ln10","Math.LN10");
+		eq=eq.replace("log2e","Math.LOG2E");
+		eq=eq.replace("log10e","Math.LOG10E");
+		eq=eq.replace("sqrt1_2","Math.SQRT1_2");
+		eq=eq.replace("sqrt2","Math.SQRT2");
+		eq=eq.replace("cos","Math.cos");
+		eq=eq.replace("sin","Math.sin");		
+		eq=eq.replace("abs","Math.abs");
+		eq=eq.replace("acos","Math.acos");
+		eq=eq.replace("asin","Math.asin");
+		eq=eq.replace("atan","Math.atan");
+		eq=eq.replace("atan2","Math.atan2");
+		eq=eq.replace("ceil","Math.ceil");
+		eq=eq.replace("exp","Math.exp");
+		eq=eq.replace("floor","Math.floor");
+		eq=eq.replace("log","Math.log");
+		eq=eq.replace("max","Math.max");
+		eq=eq.replace("min","Math.min");
+		eq=eq.replace("pow","Math.pow");
+		eq=eq.replace("random","Math.random");
+		eq=eq.replace("round","Math.round");
+		eq=eq.replace("sqrt","Math.sqrt");
+		eq=eq.replace("tan","Math.tan");
+		
+		var result="not a number";
+		try {
+			eval(document.getElementById('funct').value+" "+"result="+eq);//evaluate functions then equation
+		} catch(err) {
+			txt="There was an error in your statement.\n";
+			txt+="Error description: " + err.description + "\n";
+			alert(txt);
+			result="Error.";
+  		}
+		document.getElementById('display').value=result;
+		document.getElementById('history').value=document.getElementById('history').value+eq+"\nResult="+result+"\n";//add to history
+	}
+}
+function removewarning() {
+	document.getElementById("warning").innerHTML="";
+}
+</script>
+<BR>
+<textarea rows="5" cols="46" ID="funct">
 //function list (JavaScript)
 //pythagorium theorem
 function pyth(a,b) {
 	return Math.sqrt(a^2+b^2);//return c
 }
 </textarea>
-
-  <textarea id="history">
-		--History will be Shown here--
-  </textarea>
- 
-<table>
-  <tr>
-    <td><input type="button" class="operator" value="π" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-    <td><input type="button" class="operator" value="e" onclick="append('euler')" style="font-size:16pt;width:100%;"></td>
-    <td><input type="button" class="operator" value="ln2" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-    <td><input type="button" class="operator" value="ln10" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="log2e" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="log10e" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="sqrt(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-  </tr>
-  <tr>
-		<td><input type="button" class="operator" value="(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value=")" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="cos(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="sin(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="tan(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="acos(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="asin(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-	</tr>
-	<tr>
-		<td><input type="button" class="operator" value="atan(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="atan2(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="sqrt2" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>	
-		<td><input type="button" class="operator" value="ceil(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="pow(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="random()" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="round(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		
-	</tr>
-	<tr>
-<td><input type="button" class="operator" value="floor(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-<td><input type="button" class="operator" value="abs(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-<td><input type="button" class="operator" value="exp(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-<td><input type="button" class="operator" value="floor(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-<td><input type="button" class="operator" value="log(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-<td><input type="button" class="operator" value="min(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-<td><input type="button" class="operator" value="max(" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-</tr>
-
-<input type="text" value="0" id="display" style="text-align: right; width: 43%; height:50px; font-size:20pt;">
-<br>
-<tr>
-		<td><input type="button" class="operator" value="+" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="-" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="." onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="/" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="*" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="," onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td colspan="2"><input type="button" class="operator" value="=" onclick="evaluate_()" style="font-size:16pt;width:100%;"></td>
-</tr>
-	<tr>
-		<td><input type="button" class="operator" value="9" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="8" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="7" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="6" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-	</tr>
-	<tr>	
-		<td><input type="button" class="operator" value="5" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="4" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="3" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="2" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-	</tr>
-	<tr>
-		<td><input type="button" class="operator" value="1" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td><input type="button" class="operator" value="0" onclick="append(this.value)" style="font-size:16pt;width:100%;"></td>
-		<td colspan="2"><input type="button" class="operator" value="c" onclick="clear_()" style="font-size:16pt;width:100%;"></td>
-	</tr>
-</table>
-</div>
-
-
-<a href="help.php" color=black>Click here for help on how to use this calculator</a>
-<BR><font color=black>iPhone tip: to scroll down on textboxes use two fingers</font>
+<BR><textarea rows="4" cols="46" id="history">
+</textarea>
+<BR><input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
+<input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="ln10" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="log2e" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="button" value="log10e" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sqrt1_2" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sqrt2" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value=")" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="button" value="cos(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sin(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="tan(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="acos(" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="button" value="asin(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="atan(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="atan2(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="ceil(" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="abs(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="exp(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="button" value="log(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="min(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="max(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="pow(" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="button" value="random()" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="round(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sqrt(" onclick="append(this.value)" style="font-size:10pt;">
+<BR><input type="text" value="0" id="display" style="text-align: right; width: 300px; font-size:20pt;">
+<BR><input type="button" value="7" onclick="append(this.value)"><input type="button" value="8" onclick="append(this.value)"><input type="button" value="9" onclick="append(this.value)"><input type="button" value="+" onclick="append(this.value)">
+<BR><input type="button" value="4" onclick="append(this.value)"><input type="button" value="5" onclick="append(this.value)"><input type="button" value="6" onclick="append(this.value)"><input type="button" value="-" onclick="append(this.value)">
+<BR><input type="button" value="1" onclick="append(this.value)"><input type="button" value="2" onclick="append(this.value)"><input type="button" value="3" onclick="append(this.value)"><input type="button" value="*" onclick="append(this.value)">
+<BR><input type="button" value="0" onclick="append(this.value)"><input type="button" value="." onclick="append(this.value)"><input type="button" value="c" onclick="clear_()"><input type="button" value="=" onclick="evaluate_()">
+<BR><input type="button" value="/" onclick="append(this.value)">
+<BR><a href="help.php">Click here for help on how to use this calculator</a>
+<BR><font color=blue>iPhone tip: to scroll down on textboxes use two fingers</font>
 <BR>
 
 <!-- begin googleads -->
