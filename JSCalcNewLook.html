@@ -77,7 +77,7 @@ display: grid;
   })();
 
 </script>
-<script type="text/javascript" src="http://www.htmlcommentbox.com/jread?page=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/&amp;mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0&amp;opts=478&amp;num=10"></script><script src="chrome-extension://ccmgknaeikaibdpfokobbkmkkbciifab/script.js"></script></head>
+<script type="text/javascript" src="http://www.htmlcommentbox.com/jread?page=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/&amp;mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0&amp;opts=478&amp;num=10"></script></head>
 <body>
 <script type="text/javascript">
 function clear_() {
@@ -134,99 +134,41 @@ function removewarning() {
 	document.getElementById("warning").innerHTML="";
 }
 </script>
-<div class="parent-container">
-	<textarea rows="5" cols="46" id="funct" style="margin: 5px 0px; height: 114px; width: 424px;">//function list (JavaScript) //pythagorium theorem function pyth(a,b) { return Math.sqrt(a^2+b^2);//return c }</textarea>
-	<textarea rows="4" cols="46" id="history" style="margin: 5px 0px; width: 410px; height: 87px;"></textarea>
-	<input type="text" value="0" id="display" style="text-align: right;font-size:20pt;">
-	<div class="buttons-container1">
-		<input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
-		<input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="ln10" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="log2e" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="log10e" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="sqrt1_2" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="sqrt2" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value=")" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="cos(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="sin(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="tan(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="acos(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="asin(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="atan(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="atan2(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="ceil(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="abs(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="exp(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="log(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="min(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="max(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="pow(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="random()" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="round(" onclick="append(this.value)" style="font-size:10pt;">
-		<input type="button" value="sqrt(" onclick="append(this.value)" style="font-size:10pt;">
-	</div>
-	<div class="buttons-container2">
-		<input type="button" value="7" onclick="append(this.value)">
-		<input type="button" value="8" onclick="append(this.value)">
-		<input type="button" value="9" onclick="append(this.value)">
-		<input type="button" value="+" onclick="append(this.value)">
-		<input type="button" value="4" onclick="append(this.value)">
-		<input type="button" value="5" onclick="append(this.value)">
-		<input type="button" value="6" onclick="append(this.value)">
-		<input type="button" value="-" onclick="append(this.value)">
-		<input type="button" value="1" onclick="append(this.value)">
-		<input type="button" value="2" onclick="append(this.value)">
-		<input type="button" value="3" onclick="append(this.value)">
-		<input type="button" value="*" onclick="append(this.value)">
-		<input type="button" value="0" onclick="append(this.value)">
-		<input type="button" value="." onclick="append(this.value)">
-		<input type="button" value="c" onclick="clear_()">
-		<input type="button" value="=" onclick="evaluate_()">
-		<input type="button" value="/" onclick="append(this.value)" style="
-">
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="parent-container"><textarea rows="5" cols="46" id="funct" style="margin: 5px 0px; height: 114px; width: 424px;">//function list (JavaScript)
+//pythagorium theorem
+function pyth(a,b) {
+	return Math.sqrt(a^2+b^2);//return c
+}
+</textarea><textarea rows="4" cols="46" id="history" style="margin: 5px 0px; width: 410px; height: 87px;"></textarea><input type="text" value="0" id="display" style="text-align: right;font-size:20pt;"><div class="buttons-container1"><input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
+<input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="ln10" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="log2e" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="log10e" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sqrt1_2" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sqrt2" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value=")" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="cos(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sin(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="tan(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="acos(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="asin(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="atan(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="atan2(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="ceil(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="abs(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="exp(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="log(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="min(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="max(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="pow(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="random()" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="round(" onclick="append(this.value)" style="font-size:10pt;">
+<input type="button" value="sqrt(" onclick="append(this.value)" style="font-size:10pt;"></div><div class="buttons-container2"><input type="button" value="7" onclick="append(this.value)"><input type="button" value="8" onclick="append(this.value)"><input type="button" value="9" onclick="append(this.value)"><input type="button" value="+" onclick="append(this.value)"><input type="button" value="4" onclick="append(this.value)"><input type="button" value="5" onclick="append(this.value)"><input type="button" value="6" onclick="append(this.value)"><input type="button" value="-" onclick="append(this.value)"><input type="button" value="1" onclick="append(this.value)"><input type="button" value="2" onclick="append(this.value)"><input type="button" value="3" onclick="append(this.value)"><input type="button" value="*" onclick="append(this.value)"><input type="button" value="0" onclick="append(this.value)"><input type="button" value="." onclick="append(this.value)"><input type="button" value="c" onclick="clear_()"><input type="button" value="=" onclick="evaluate_()"><input type="button" value="/" onclick="append(this.value)" style="
+"></div></div>
 <br><a href="help.php">Click here for help on how to use this calculator</a>
 <br><font color="blue">iPhone tip: to scroll down on textboxes use two fingers</font>
 <br>
@@ -245,7 +187,7 @@ google_ad_height = 250;
 <!-- end googleads -->
 <br>Please add any interesting functions you create to the comments section below. if they dont fit in one comment use <a href="http://pastebin.com" target="_blank">http://pastebin.com</a> and paste the link
 <!-- begin htmlcommentbox.com -->
- <div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}#HCB_comment_box input[type="file"]{display:none}#HCB_comment_box input.inputfile{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}#HCB_comment_box input.inputfile+label {display: inline}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form accept-charset="utf-8" id="hcb_form" enctype="multipart/form-data" onsubmit="return hcb.submit()" action="https://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<input type="file" name="hcb_file" id="hcb_file" class="inputfile" title="upload image"><label for="hcb_file" title="upload image"><a class="btn">Add Image</a></label><span class="home-desc">&nbsp;Not using&nbsp;</span><a target="_blank" href="https://www.htmlcommentbox.com">Html Comment Box</a><span class="home-desc">&nbsp; yet?<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&amp;state=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/&amp;redirect_uri=https%3A//www.htmlcommentbox.com%2Foauth2callback&amp;response_type=code&amp;client_id=1058610383547-jradgb7j4d5t6ia6dq8gaoh9fvgl01kb.apps.googleusercontent.com&amp;approval_prompt=force"><img src="https://www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon hcb-door-in"></a>&nbsp;</small></div><div style="clear:both"></div></span></div></form></div><div id="comments_list"><p id="no_comments">No one has commented yet. Be the first!</p></div><a href="https://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Famigojapan.github.io%2Fweb-JavaScript-programmable-scientific-calculator%2F&amp;opts=478&amp;mod=$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" style="text-decoration:none"><img src="https://www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ <div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}#HCB_comment_box input[type="file"]{display:none}#HCB_comment_box input.inputfile{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}#HCB_comment_box input.inputfile+label {display: inline}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form accept-charset="utf-8" id="hcb_form" enctype="multipart/form-data" onsubmit="return hcb.submit()" action="https://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<input type="file" name="hcb_file" id="hcb_file" class="inputfile" title="upload image"><label for="hcb_file" title="upload image"><a class="btn">Add Image</a></label><span class="home-desc">&nbsp;Not using&nbsp;</span><a target="_blank" href="https://www.htmlcommentbox.com">Html Comment Box</a><span class="home-desc">&nbsp; yet?<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&amp;state=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/&amp;redirect_uri=https%3A//www.htmlcommentbox.com%2Foauth2callback&amp;response_type=code&amp;client_id=1058610383547-jradgb7j4d5t6ia6dq8gaoh9fvgl01kb.apps.googleusercontent.com&amp;approval_prompt=force"><img src="https://www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon hcb-door-in"></a>&nbsp;</small></div><div style="clear:both"></div></span></div></form></div><div id="comments_list"><div class="comment" id="comment_14511159"><span class="date">(20 minutes ago) </span><span class="author"><b class="author-name">hassoon </b> said:</span> <blockquote>:D </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('14511159')"><img src="https://www.htmlcommentbox.com/static/images/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('14511159')"><img src="https://www.htmlcommentbox.com/static/images/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="https://www.htmlcommentbox.com/static/images/like.png"></div></div></div><a href="https://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Famigojapan.github.io%2Fweb-JavaScript-programmable-scientific-calculator%2F&amp;opts=478&amp;mod=$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" style="text-decoration:none"><img src="https://www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"> </a></div>
  <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/simple/skin.css">
  <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
 <!-- end htmlcommentbox.com -->
