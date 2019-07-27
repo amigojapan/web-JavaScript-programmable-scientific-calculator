@@ -189,7 +189,7 @@ background-position: -5000px; } }
         if(!isGraphMode){
             let eq=document.getElementById('display').value;
             if (eq!=null && eq!="") {
-                eq=eq.replace("Ï€","Math.PI");
+                eq=eq.replace("π","Math.PI");
                 eq=eq.replace("euler","Math.E");
                 eq=eq.replace("ln2","Math.LN2");
                 eq=eq.replace("ln10","Math.LN10");
@@ -239,8 +239,8 @@ background-position: -5000px; } }
 
         let initEq=document.getElementById('display-graph').value;
             if (initEq!=null && initEq!="") {
-                initEq = initEq.replace("Ï€","Math.PI");
-                //eq=eq.replace("Ï€","Math.PI");
+                initEq = initEq.replace("π","Math.PI");
+                //eq=eq.replace("π","Math.PI");
                 initEq=initEq.replace("euler","Math.E");
                 initEq=initEq.replace("ln2","Math.LN2");
                 initEq=initEq.replace("ln10","Math.LN10");
@@ -438,7 +438,7 @@ return Math.sqrt(a^2+b^2);//return c
         </div>
         
         <div class="buttons-container1">
-        <input type="button" value="Ï€" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
         <input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="ln10" onclick="append(this.value)" style="font-size:10pt;">
