@@ -1,0 +1,524 @@
+<html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+    input[type="button"],
+    button[type="button"]{
+        cursor:pointer;
+        border-radius:2px;
+        border:1px solid #999;
+        background:#FFFFFF;
+        box-shadow:inset 0 0 2px 0px #BBB,inset 0 0 6px 0px #DDD;
+    }
+    input[type="button"]:active,
+    button[type="button"]:active{
+        box-shadow:inset 0 0 2px 0px #999,
+        inset 0 0 6px 2px #BBB;
+    }
+    input[type="button"]:focus,
+    button[type="button"]:focus{
+        outline:none;
+    }
+    input[type="text"], textarea{
+        border-radius:5px;
+        border:1px solid  #999;
+        outline:none;
+        width: 100% !important;
+        padding: 2px;
+    }
+    textarea{
+        /*height:auto !important;*/
+    }
+    input[type="text"]:focus, textarea:focus{
+        box-shadow:0 0 6px 0px #222;
+    }
+    .buttons-container1{
+    
+        display: grid;
+        grid-template-columns:  63px 63px 63px 63px;
+        grid-template-rows: repeat(8, 24px);
+        grid-gap: 1px;
+    
+    }
+    .buttons-container2{    
+    display: grid;
+        grid-template-columns:  63px 63px 63px 63px;
+        grid-template-rows: repeat(5, 30px);
+        grid-gap: 1px;
+    }
+    .parent-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #999999;
+        border-radius: 5px;
+        width: 400px;
+        padding: 8px 16px;
+        margin: auto;
+        background:#f7f7f7;
+    }
+    .parent-container > *{
+        margin: 0 0 5px 0 !important;
+    }
+    .parent-container > :first-child{
+        margin-top: 0 !important;
+    }
+    .parent-container > :last-child{
+        margin-bottom:0;
+    }
+    .graph-mode{
+        background: #999 !important;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+    .hide{
+        display:none !important;
+    }
+    .x-variable-btn{
+        /*background: #fffbe6 !important;*/
+    }
+    .draw-graph-btn{
+        background-image: url('data:image/png;base64,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') !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    </style>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21132921-5']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript" src="http://www.htmlcommentbox.com/jread?page=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/&amp;mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0&amp;opts=478&amp;num=20"></script>
+    <script type="text/javascript" src="http://www.htmlcommentbox.com/jread?page=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/JSCalcNewLook.html&amp;mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0&amp;opts=478&amp;num=20"></script>
+    <script type="text/javascript" src="http://www.htmlcommentbox.com/jread?page=http%3A//amigojapan.github.io/web-JavaScript-programmable-scientific-calculator/JSCalcNewLook.html&amp;mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0&amp;opts=478&amp;num=20"></script>
+<script type="text/javascript" src="http://www.htmlcommentbox.com/jread?page=http%3A//127.0.0.1/calc/&amp;mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0&amp;opts=478&amp;num=20"></script><style type="text/css">.backpack.dropzone {
+font-family: 'SF UI Display', 'Segoe UI';
+font-size: 15px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 250px;
+height: 150px;
+font-weight: lighter;
+color: white;
+will-change: right;
+z-index: 2147483647;
+bottom: 20%;
+background: #333;
+position: fixed;
+user-select: none;
+transition: left .5s, right .5s;
+right: 0px; }
+.backpack.dropzone .animation {
+height: 80px;
+width: 250px;
+background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+.backpack.dropzone .title::before {
+content: 'Save to'; }
+.backpack.dropzone.closed {
+right: -250px; }
+.backpack.dropzone.hover .animation {
+animation: sxt-play-anim-hover 0.91s steps(21);
+animation-fill-mode: forwards;
+background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+
+@keyframes sxt-play-anim-hover {
+from {
+background-position: 0px; }
+to {
+background-position: -5250px; } }
+.backpack.dropzone.saving .title::before {
+content: 'Saving to'; }
+.backpack.dropzone.saving .animation {
+background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saving_loop.png") left center;
+animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+
+@keyframes sxt-play-anim-saving {
+100% {
+background-position: -14750px; } }
+.backpack.dropzone.saved .title::before {
+content: 'Saved to'; }
+.backpack.dropzone.saved .animation {
+background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saved.png") left center;
+animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+
+@keyframes sxt-play-anim-saved {
+100% {
+background-position: -5000px; } }
+</style></head>
+<body>
+    <script type="text/javascript">
+    
+    function clear_() {
+        if(!isGraphMode){
+            document.getElementById('display').value="0";
+        }
+        else{
+            document.getElementById('display-graph').value="0";
+        }
+        
+    }
+
+    function append(value) {
+        if(!isGraphMode){
+            if(document.getElementById('display').value==0) document.getElementById('display').value="";
+            document.getElementById('display').value=document.getElementById('display').value + value;
+        }
+        else{
+            if(document.getElementById('display-graph').value==0) document.getElementById('display-graph').value="";
+            document.getElementById('display-graph').value=document.getElementById('display-graph').value + value;
+        }
+    }
+
+    function appendx(value) {
+        
+    }
+
+    function evaluate_() {
+        if(!isGraphMode){
+            let eq=document.getElementById('display').value;
+            if (eq!=null && eq!="") {
+                eq=eq.replace("Ï€","Math.PI");
+                eq=eq.replace("euler","Math.E");
+                eq=eq.replace("ln2","Math.LN2");
+                eq=eq.replace("ln10","Math.LN10");
+                eq=eq.replace("log2e","Math.LOG2E");
+                eq=eq.replace("log10e","Math.LOG10E");
+                eq=eq.replace("sqrt1_2","Math.SQRT1_2");
+                eq=eq.replace("sqrt2","Math.SQRT2");
+                eq=eq.replace("cos","Math.cos");
+                eq=eq.replace("sin","Math.sin");		
+                eq=eq.replace("abs","Math.abs");
+                eq=eq.replace("acos","Math.acos");
+                eq=eq.replace("asin","Math.asin");
+                eq=eq.replace("atan","Math.atan");
+                eq=eq.replace("atan2","Math.atan2");
+                eq=eq.replace("ceil","Math.ceil");
+                eq=eq.replace("exp","Math.exp");
+                eq=eq.replace("floor","Math.floor");
+                eq=eq.replace("log","Math.log");
+                eq=eq.replace("max","Math.max");
+                eq=eq.replace("min","Math.min");
+                eq=eq.replace("pow","Math.pow");
+                eq=eq.replace("random","Math.random");
+                eq=eq.replace("round","Math.round");
+                eq=eq.replace("sqrt","Math.sqrt");
+                eq=eq.replace("tan","Math.tan");
+
+                var result="not a number";
+                try {
+                    eval(document.getElementById('funct').value+" "+"result="+eq);//evaluate functions then equation
+                } catch(err) {
+                    txt="There was an error in your statement.\n";
+                    txt+="Error description: " + err.description + "\n";
+                    alert(txt);
+                    result="Error.";
+                  }
+                document.getElementById('display').value=result;
+                document.getElementById('history').value=document.getElementById('history').value+eq+"\nResult="+result+"\n";//add to history
+            }
+        }
+        
+    }
+
+    function drawGraph(){
+        let myCanvas = document.getElementById("graph-canvas")
+        let ctx = myCanvas.getContext("2d");
+        initCanvasGraph();
+
+        let initEq=document.getElementById('display-graph').value;
+            if (initEq!=null && initEq!="") {
+                initEq = initEq.replace("Ï€","Math.PI");
+                //eq=eq.replace("Ï€","Math.PI");
+                initEq=initEq.replace("euler","Math.E");
+                initEq=initEq.replace("ln2","Math.LN2");
+                initEq=initEq.replace("ln10","Math.LN10");
+                initEq=initEq.replace("log2e","Math.LOG2E");
+                initEq=initEq.replace("log10e","Math.LOG10E");
+                initEq=initEq.replace("sqrt1_2","Math.SQRT1_2");
+                initEq=initEq.replace("sqrt2","Math.SQRT2");
+                initEq=initEq.replace("cos","Math.cos");
+                initEq=initEq.replace("sin","Math.sin");		
+                initEq=initEq.replace("abs","Math.abs");
+                initEq=initEq.replace("acos","Math.acos");
+                initEq=initEq.replace("asin","Math.asin");
+                initEq=initEq.replace("atan","Math.atan");
+                initEq=initEq.replace("atan2","Math.atan2");
+                initEq=initEq.replace("ceil","Math.ceil");
+                initEq=initEq.replace("exp","Math.exp");
+                initEq=initEq.replace("floor","Math.floor");
+                initEq=initEq.replace("log","Math.log");
+                initEq=initEq.replace("max","Math.max");
+                initEq=initEq.replace("min","Math.min");
+                initEq=initEq.replace("pow","Math.pow");
+                initEq=initEq.replace("random","Math.random");
+                initEq=initEq.replace("round","Math.round");
+                initEq=initEq.replace("sqrt","Math.sqrt");
+                initEq=initEq.replace("tan","Math.tan");
+                ctx.lineWidth = 0.2;
+                ctx.lineCap = "square";
+                ctx.strokeStyle = "#C60C0C";
+                ctx.beginPath();
+                let primResult = undefined;
+                for(let i = 0.000001; i<=parseInt(myCanvas.width)/2; i+=0.15){
+                    let newEq = initEq;
+                    while(newEq.indexOf('X') !== -1){
+                        newEq=newEq.replace("X",i);                       
+                    }
+
+                    var result="not a number";
+                    try {
+                        eval(document.getElementById('funct').value+" "+"result="+newEq);//evaluate functions then equation
+                    } 
+                    catch(err) {
+                        txt="There was an error in your statement.\n";
+                        txt+="Error description: " + err.description + "\n";
+                        //alert(txt);
+                        console.error(txt);
+                        result="Error.";
+                        return;
+                    }
+                    if(result !=='Error.'){
+                      primResult = (primResult === undefined)? result : primResult;
+                  
+                      if(i == -parseInt(myCanvas.width)/2){
+                          ctx.moveTo(i, parseFloat(result));
+                      }
+
+                      if(result * primResult < 0){
+                        ctx.moveTo(i, parseFloat(result));
+                      } 
+                      else{
+                        ctx.lineTo(i, parseFloat(result));
+                      }
+                      ctx.stroke();
+
+                      primResult = result;
+                    }
+                }
+
+
+
+                for(let i = -0.000001;i>=-parseInt(myCanvas.width)/2; i-=0.15){
+                    let newEq = initEq;
+                    while(newEq.indexOf('X') !== -1){
+                        newEq=newEq.replace("X",i);                       
+                    }
+
+                    var result="not a number";
+                    try {
+                        eval(document.getElementById('funct').value+" "+"result="+newEq);//evaluate functions then equation
+                    } 
+                    catch(err) {
+                        txt="There was an error in your statement.\n";
+                        txt+="Error description: " + err.description + "\n";
+                        //alert(txt);
+                        console.error(txt);
+                        result="Error.";
+                        return;
+                    }
+                    if(result !=='Error.'){
+                        primResult = (primResult === undefined)? result : primResult;
+                      if(i == -0.000001){
+      /*                  if((parseFloat(result)) * (1/(i-0.01))<0){
+    ctx.moveTo(i, -(1/i));
+   }*/
+                          ctx.moveTo(i, parseFloat(result));
+                      }
+
+                      if(result * primResult < 0){
+                        ctx.moveTo(i, parseFloat(result));
+                      } 
+                      else{
+                        ctx.lineTo(i, parseFloat(result));
+                      }
+                      
+                          ctx.stroke()
+                      primResult = result;
+                    }
+                }
+                
+            }
+
+    }
+
+    function removewarning() {
+        document.getElementById("warning").innerHTML="";
+    }
+
+    function toggleGraphMode(toggleGraphModeBtn){
+        toggleGraphModeBtn.classList.toggle("graph-mode");
+        document.querySelector(".x-variable-btn").classList.toggle("hide");
+        document.querySelector(".draw-graph-btn").classList.toggle("hide");
+        
+        document.querySelector("#graph-mode-area").classList.toggle("hide");
+        document.querySelector("#non-graph-mode-area").classList.toggle("hide");
+        isGraphMode = !isGraphMode;
+    }
+
+
+    function initCanvasGraph(){
+        
+            let myCanvas = document.getElementById("graph-canvas")
+            let ctx = myCanvas.getContext("2d");
+            if(!window.isCartesianGraph){
+                ctx.translate(parseInt(myCanvas.width)/2, parseInt(myCanvas.height)/2);
+                ctx.scale(1,-1);
+                ctx.transform(10, 0, 0, 10, 0, 0);
+                window.isCartesianGraph = true;
+            }
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.strokeStyle = '#333333'
+            ctx.lineWidth = '0.02';
+            ctx.fillRect(-parseInt(myCanvas.width)/2, -parseInt(myCanvas.height)/2, parseInt(myCanvas.width), parseInt(myCanvas.height));
+                        
+            for(let i = 0; i<(parseInt(myCanvas.width)/2); i+=2){
+                ctx.beginPath();
+                ctx.moveTo(i, -parseInt(myCanvas.height)/2);
+                ctx.lineTo(i, parseInt(myCanvas.height)/2);
+                ctx.stroke();
+            }
+            for(let i = 0; i>(-parseInt(myCanvas.width)/2); i-=2){
+                ctx.beginPath();
+                ctx.moveTo(i, -parseInt(myCanvas.height)/2);
+                ctx.lineTo(i, parseInt(myCanvas.height)/2);
+                ctx.stroke();
+            }
+            
+            
+            for(let i = 0; i<(parseInt(myCanvas.height)/2); i+=2){
+                ctx.beginPath();
+                ctx.moveTo(-parseInt(myCanvas.width), i);
+                ctx.lineTo(parseInt(myCanvas.width)/2, i);
+                ctx.stroke();
+            }
+            for(let i = 0; i>(-parseInt(myCanvas.height)/2); i-=2){
+                ctx.beginPath();
+                ctx.moveTo(-parseInt(myCanvas.width), i);
+                ctx.lineTo(parseInt(myCanvas.width)/2, i);
+                ctx.stroke();
+            }
+        }
+        var isGraphMode = false;
+        document.addEventListener("DOMContentLoaded", function(){
+            initCanvasGraph();
+        });
+    
+    </script>
+
+    <div class="parent-container">
+        <span class="signature" style="font-style: oblique;font-family: serif;text-shadow: 4px 3px 2px #AAAAAA, 0px 0px 11px #777777;">By hassoon &amp; amigojapan</span>
+        <div style="display: flex;flex-direction: column;align-items: center;width: 100%;" id="non-graph-mode-area">
+<textarea rows="5" cols="46" id="funct" style="margin: 5px 0px; height: 114px !important; width: 424px;">//function list (JavaScript)
+//pythagorium theorem
+function pyth(a,b) {
+return Math.sqrt(a^2+b^2);//return c
+}
+</textarea>
+        <textarea rows="4" cols="46" id="history" style="margin: 5px 0px; width: 410px; height: 87px !important;" readonly=""></textarea>
+        <input type="text" value="0" id="display" style="text-align: right;font-size:20pt;margin: 5px 0px;">
+        </div>
+        <div style="display: flex;flex-direction: column;align-items: center;width: 100%;" id="graph-mode-area" class="hide">
+            <div>
+                <canvas width="404" height="227" id="graph-canvas" style="border: 1px solid #999999;border-radius: 5px;background: #FFFFFF;"></canvas>
+            </div>
+            <input type="text" value="0" id="display-graph" style="text-align: right;font-size:20pt;margin: 5px 0px;">
+        </div>
+        
+        <div class="buttons-container1">
+        <input type="button" value="Ï€" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
+        <input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="ln10" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="log2e" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="log10e" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="sqrt1_2" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="sqrt2" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value=")" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="cos(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="sin(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="tan(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="acos(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="asin(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="atan(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="atan2(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="ceil(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="abs(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="exp(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="log(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="min(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="max(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="pow(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="random()" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="round(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="sqrt(" onclick="append(this.value)" style="font-size:10pt;">
+        <button type="button" onclick="toggleGraphMode(this)" style="font-size:10pt;" id="toggleGraphModeBtn">Graph</button>
+        <input type="button" onclick="append(this.value)" style="font-size:10pt;" class="x-variable-btn hide" value="X" title="function's X variable">
+
+        <button type="button" onclick="drawGraph(this.value)" style="font-size:10pt;" class="draw-graph-btn hide" title="Draw function's graph"></button>
+
+        </div>
+        <div class="buttons-container2">
+            <input type="button" value="7" onclick="append(this.value)">
+            <input type="button" value="8" onclick="append(this.value)">
+            <input type="button" value="9" onclick="append(this.value)">
+            <input type="button" value="+" onclick="append(this.value)">
+            <input type="button" value="4" onclick="append(this.value)">
+            <input type="button" value="5" onclick="append(this.value)">
+            <input type="button" value="6" onclick="append(this.value)">
+            <input type="button" value="-" onclick="append(this.value)">
+            <input type="button" value="1" onclick="append(this.value)">
+            <input type="button" value="2" onclick="append(this.value)">
+            <input type="button" value="3" onclick="append(this.value)">
+            <input type="button" value="*" onclick="append(this.value)">
+            <input type="button" value="0" onclick="append(this.value)">
+            <input type="button" value="." onclick="append(this.value)">
+            <input type="button" value="c" onclick="clear_()">
+            <input type="button" value="=" onclick="evaluate_()">
+            <input type="button" value="/" onclick="append(this.value)">
+            <input type="button" value="," onclick="append(this.value)">
+        </div>
+    </div>
+    <br>
+    <br><font color="blue">iPhone tip: to scroll down on textboxes use two fingers</font>
+    <br>
+    
+    <!-- begin googleads -->
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-9531260817223025";
+    /* calculatoradunit */
+    google_ad_slot = "4780415365";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+    <!-- end googleads -->
+    <br>Please add any interesting functions you create to the comments section below. if they dont fit in one comment use <a href="http://pastebin.com" target="_blank">http://pastebin.com</a> and paste the link
+    <!-- begin htmlcommentbox.com -->
+     <div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}#HCB_comment_box input[type="file"]{display:none}#HCB_comment_box input.inputfile{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}#HCB_comment_box input.inputfile+label {display: inline}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form accept-charset="utf-8" id="hcb_form" enctype="multipart/form-data" onsubmit="return hcb.submit()" action="https://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://127.0.0.1/calc/" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://127.0.0.1/calc/#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="windows-1252" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<input type="file" name="hcb_file" id="hcb_file" class="inputfile" title="upload image"><label for="hcb_file" title="upload image"><a class="btn">Add Image</a></label><span class="home-desc">&nbsp;Not using&nbsp;</span><a target="_blank" href="https://www.htmlcommentbox.com">Html Comment Box</a><span class="home-desc">&nbsp; yet?<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&amp;state=http%3A//127.0.0.1/calc/&amp;redirect_uri=https%3A//www.htmlcommentbox.com%2Foauth2callback&amp;response_type=code&amp;client_id=1058610383547-jradgb7j4d5t6ia6dq8gaoh9fvgl01kb.apps.googleusercontent.com&amp;approval_prompt=force"><img src="https://www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon hcb-door-in"></a>&nbsp;</small></div><div style="clear:both"></div></span></div></form></div><div id="comments_list"><p id="no_comments">No one has commented yet. Be the first!</p></div><a href="https://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2F127.0.0.1%2Fcalc%2F&amp;opts=478&amp;mod=$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" style="text-decoration:none"><img src="https://www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"> </a></div>
+     <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/simple/skin.css">
+     <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0"+"&opts=478&num=20");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+    <!-- end htmlcommentbox.com -->
+    
+    
+    
+    
+    
+    </body></html>
