@@ -189,32 +189,32 @@ background-position: -5000px; } }
         if(!isGraphMode){
             let eq=document.getElementById('display').value;
             if (eq!=null && eq!="") {
-                eq=eq.replace("π","Math.PI");
-                eq=eq.replace("euler","Math.E");
-                eq=eq.replace("ln2","Math.LN2");
-                eq=eq.replace("ln10","Math.LN10");
-                eq=eq.replace("log2e","Math.LOG2E");
-                eq=eq.replace("log10e","Math.LOG10E");
-                eq=eq.replace("sqrt1_2","Math.SQRT1_2");
-                eq=eq.replace("sqrt2","Math.SQRT2");
-                eq=eq.replace("cos","Math.cos");
-                eq=eq.replace("sin","Math.sin");		
-                eq=eq.replace("abs","Math.abs");
-                eq=eq.replace("acos","Math.acos");
-                eq=eq.replace("asin","Math.asin");
-                eq=eq.replace("atan","Math.atan");
-                eq=eq.replace("atan2","Math.atan2");
-                eq=eq.replace("ceil","Math.ceil");
-                eq=eq.replace("exp","Math.exp");
-                eq=eq.replace("floor","Math.floor");
-                eq=eq.replace("log","Math.log");
-                eq=eq.replace("max","Math.max");
-                eq=eq.replace("min","Math.min");
-                eq=eq.replace("pow","Math.pow");
-                eq=eq.replace("random","Math.random");
-                eq=eq.replace("round","Math.round");
-                eq=eq.replace("sqrt","Math.sqrt");
-                eq=eq.replace("tan","Math.tan");
+                eq=eq.replaceAll("π","Math.PI");
+                eq=eq.replaceAll("euler","Math.E");
+                eq=eq.replaceAll("ln2","Math.LN2");
+                eq=eq.replaceAll("ln10","Math.LN10");
+                eq=eq.replaceAll("log2e","Math.LOG2E");
+                eq=eq.replaceAll("log10e","Math.LOG10E");
+                eq=eq.replaceAll("sqrt1_2","Math.SQRT1_2");
+                eq=eq.replaceAll("sqrt2","Math.SQRT2");
+                eq=eq.replaceAll("cos","Math.cos");
+                eq=eq.replaceAll("sin","Math.sin");		
+                eq=eq.replaceAll("abs","Math.abs");
+                eq=eq.replaceAll("acos","Math.acos");
+                eq=eq.replaceAll("asin","Math.asin");
+                eq=eq.replaceAll("atan","Math.atan");
+                eq=eq.replaceAll("atan2","Math.atan2");
+                eq=eq.replaceAll("ceil","Math.ceil");
+                eq=eq.replaceAll("exp","Math.exp");
+                eq=eq.replaceAll("floor","Math.floor");
+                eq=eq.replaceAll("log","Math.log");
+                eq=eq.replaceAll("max","Math.max");
+                eq=eq.replaceAll("min","Math.min");
+                eq=eq.replaceAll("pow","Math.pow");
+                eq=eq.replaceAll("random","Math.random");
+                eq=eq.replaceAll("round","Math.round");
+                eq=eq.replaceAll("sqrt","Math.sqrt");
+                eq=eq.replaceAll("tan","Math.tan");
 
                 var result="not a number";
                 try {
@@ -239,33 +239,33 @@ background-position: -5000px; } }
 
         let initEq=document.getElementById('display-graph').value;
             if (initEq!=null && initEq!="") {
-                initEq = initEq.replace("π","Math.PI");
-                //eq=eq.replace("π","Math.PI");
-                initEq=initEq.replace("euler","Math.E");
-                initEq=initEq.replace("ln2","Math.LN2");
-                initEq=initEq.replace("ln10","Math.LN10");
-                initEq=initEq.replace("log2e","Math.LOG2E");
-                initEq=initEq.replace("log10e","Math.LOG10E");
-                initEq=initEq.replace("sqrt1_2","Math.SQRT1_2");
-                initEq=initEq.replace("sqrt2","Math.SQRT2");
-                initEq=initEq.replace("cos","Math.cos");
-                initEq=initEq.replace("sin","Math.sin");		
-                initEq=initEq.replace("abs","Math.abs");
-                initEq=initEq.replace("acos","Math.acos");
-                initEq=initEq.replace("asin","Math.asin");
-                initEq=initEq.replace("atan","Math.atan");
-                initEq=initEq.replace("atan2","Math.atan2");
-                initEq=initEq.replace("ceil","Math.ceil");
-                initEq=initEq.replace("exp","Math.exp");
-                initEq=initEq.replace("floor","Math.floor");
-                initEq=initEq.replace("log","Math.log");
-                initEq=initEq.replace("max","Math.max");
-                initEq=initEq.replace("min","Math.min");
-                initEq=initEq.replace("pow","Math.pow");
-                initEq=initEq.replace("random","Math.random");
-                initEq=initEq.replace("round","Math.round");
-                initEq=initEq.replace("sqrt","Math.sqrt");
-                initEq=initEq.replace("tan","Math.tan");
+                initEq = initEq.replaceAll("π","Math.PI");
+                //eq=eq.replaceAll("π","Math.PI");
+                initEq=initEq.replaceAll("euler","Math.E");
+                initEq=initEq.replaceAll("ln2","Math.LN2");
+                initEq=initEq.replaceAll("ln10","Math.LN10");
+                initEq=initEq.replaceAll("log2e","Math.LOG2E");
+                initEq=initEq.replaceAll("log10e","Math.LOG10E");
+                initEq=initEq.replaceAll("sqrt1_2","Math.SQRT1_2");
+                initEq=initEq.replaceAll("sqrt2","Math.SQRT2");
+                initEq=initEq.replaceAll("cos","Math.cos");
+                initEq=initEq.replaceAll("sin","Math.sin");		
+                initEq=initEq.replaceAll("abs","Math.abs");
+                initEq=initEq.replaceAll("acos","Math.acos");
+                initEq=initEq.replaceAll("asin","Math.asin");
+                initEq=initEq.replaceAll("atan","Math.atan");
+                initEq=initEq.replaceAll("atan2","Math.atan2");
+                initEq=initEq.replaceAll("ceil","Math.ceil");
+                initEq=initEq.replaceAll("exp","Math.exp");
+                initEq=initEq.replaceAll("floor","Math.floor");
+                initEq=initEq.replaceAll("log","Math.log");
+                initEq=initEq.replaceAll("max","Math.max");
+                initEq=initEq.replaceAll("min","Math.min");
+                initEq=initEq.replaceAll("pow","Math.pow");
+                initEq=initEq.replaceAll("random","Math.random");
+                initEq=initEq.replaceAll("round","Math.round");
+                initEq=initEq.replaceAll("sqrt","Math.sqrt");
+                initEq=initEq.replaceAll("tan","Math.tan");
                 ctx.lineWidth = 0.2;
                 ctx.lineCap = "square";
                 ctx.strokeStyle = "#C60C0C";
@@ -274,7 +274,7 @@ background-position: -5000px; } }
                 for(let i = 0.000001; i<=parseInt(myCanvas.width)/2; i+=0.15){
                     let newEq = initEq;
                     while(newEq.indexOf('X') !== -1){
-                        newEq=newEq.replace("X",i);                       
+                        newEq=newEq.replaceAll("X",i);                       
                     }
 
                     var result="not a number";
@@ -313,7 +313,7 @@ background-position: -5000px; } }
                 for(let i = -0.000001;i>=-parseInt(myCanvas.width)/2; i-=0.15){
                     let newEq = initEq;
                     while(newEq.indexOf('X') !== -1){
-                        newEq=newEq.replace("X",i);                       
+                        newEq=newEq.replaceAll("X",i);                       
                     }
 
                     var result="not a number";
@@ -515,7 +515,7 @@ function pyth(a,b) {
     <!-- begin htmlcommentbox.com -->
      <div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}#HCB_comment_box input[type="file"]{display:none}#HCB_comment_box input.inputfile{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}#HCB_comment_box input.inputfile+label {display: inline}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form accept-charset="utf-8" id="hcb_form" enctype="multipart/form-data" onsubmit="return hcb.submit()" action="https://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://127.0.0.1/calc/" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://127.0.0.1/calc/#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="windows-1252" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<input type="file" name="hcb_file" id="hcb_file" class="inputfile" title="upload image"><label for="hcb_file" title="upload image"><a class="btn">Add Image</a></label><span class="home-desc">&nbsp;Not using&nbsp;</span><a target="_blank" href="https://www.htmlcommentbox.com">Html Comment Box</a><span class="home-desc">&nbsp; yet?<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&amp;state=http%3A//127.0.0.1/calc/&amp;redirect_uri=https%3A//www.htmlcommentbox.com%2Foauth2callback&amp;response_type=code&amp;client_id=1058610383547-jradgb7j4d5t6ia6dq8gaoh9fvgl01kb.apps.googleusercontent.com&amp;approval_prompt=force"><img src="https://www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon hcb-door-in"></a>&nbsp;</small></div><div style="clear:both"></div></span></div></form></div><div id="comments_list"><p id="no_comments">No one has commented yet. Be the first!</p></div><a href="https://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2F127.0.0.1%2Fcalc%2F&amp;opts=478&amp;mod=$1$wq1rdBcg$Jz6kdIcrNrVLA6vgjX5/z0" style="text-decoration:none"><img src="https://www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"> </a></div>
      <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/simple/skin.css">
-     <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0"+"&opts=478&num=20");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+     <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replaceAll("+","%2B")+"&mod=%241%24wq1rdBcg%24Jz6kdIcrNrVLA6vgjX5/z0"+"&opts=478&num=20");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
     <!-- end htmlcommentbox.com -->
     
     <!--
