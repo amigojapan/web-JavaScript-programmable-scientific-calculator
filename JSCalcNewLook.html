@@ -421,13 +421,22 @@ background-position: -5000px; } }
     <div class="parent-container">
         <span class="signature" style="font-style: oblique;font-family: serif;text-shadow: 4px 3px 2px #AAAAAA, 0px 0px 11px #777777;">By hassoon &amp; amigojapan</span>
         <div style="display: flex;flex-direction: column;align-items: center;width: 100%;" id="non-graph-mode-area">
-            <textarea rows="5" cols="46" id="funct" wrap="off" style="margin: 5px 0px; height: 114px !important; width: 424px;">
+<textarea rows="5" cols="46" id="funct" wrap="off" style="margin: 5px 0px; height: 114px !important; width: 424px;">
 //function list (JavaScript)
 //pythagorium theorem
 function pyth(a,b) {
  return Math.sqrt(Math.pow(a,2)+Math.pow(b,2));//return c
 }
-            </textarea>
+//user defined functions 1 thru 4
+function F1() {
+}
+function F2() {
+}
+function F3() {
+}
+function F4() {
+}
+</textarea>
         <textarea rows="4" cols="46" id="history" style="margin: 5px 0px; width: 410px; height: 87px !important;" readonly=""></textarea>
         <input type="text" value="0" id="display" style="text-align: right;font-size:20pt;margin: 5px 0px;">
         </div>
@@ -439,6 +448,13 @@ function pyth(a,b) {
         </div>
         
         <div class="buttons-container1">
+
+        <input type="button" value="F1(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="F2(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="F3(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="F4(" onclick="append(this.value)" style="font-size:10pt;">
+
+
         <input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
         <input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
