@@ -144,6 +144,161 @@
     font-weight: bold;           /* White text */
     }
 
+    button {
+    background-color: #FFFF00; /* Red background */
+    color: #FF0000;
+    font-weight: bold;           /* White text */
+    }
+    input[value=","] {
+    background-color: #FFFF00; /* Red background */
+    color: #FF0000;
+    font-weight: bold;           /* White text */
+    }
+    input[value="π"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+    input[value="e"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+    input[value="log2e"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+    input[value="log10e"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+
+    input[value="ln2"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+    input[value="ln10"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+
+    input[value="sqrt1_2"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+    input[value="sqrt2"] {
+    background-color: #FF0000; /* Red background */
+    color: #FFFF00;
+    font-weight: bold;           /* White text */
+    }
+
+    input[value="cos("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }
+    input[value="sin("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="tan("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="acos("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="asin("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="atan("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="atan2("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="ceil("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="floor("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="abs("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="exp("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="log("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="min("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="max("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="pow("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="random("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="round("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="sqrt("] {
+    background-color: #00FF00; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+
+
+    input[value="BS"] {
+    background-color: #FF0000; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
+    input[value="AC"] {
+    background-color: #FF0000; /* Red background */
+    color: #000000;
+    font-weight: bold;           /* White text */
+    }    
 
     body {
           background-color: black; /* Or any valid color name, hex code, or RGB value */
@@ -306,6 +461,10 @@ background-position: -5000px; } }
 
     function appendx(value) {
         
+    }
+
+    function backspace() {
+        document.getElementById('display').value="put backspace algo";
     }
 
     function evaluate_() {
@@ -579,6 +738,10 @@ function F4() {
 
         <input type="button" value="(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value=")" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="," onclick="append(this.value)">        
+        <button type="button" onclick="toggleGraphMode(this)" style="font-size:10pt;" id="toggleGraphModeBtn">Graph</button>
+        <input type="button" onclick="append(this.value)" style="font-size:10pt;" class="x-variable-btn hide" value="X" title="function's X variable">
+        <button type="button" onclick="drawGraph(this.value)" style="font-size:10pt;" class="draw-graph-btn hide" title="Draw function's graph"></button>
         <input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
         <input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
@@ -598,7 +761,6 @@ function F4() {
         <input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="abs(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="exp(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="log(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="min(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="max(" onclick="append(this.value)" style="font-size:10pt;">
@@ -606,12 +768,10 @@ function F4() {
         <input type="button" value="random(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="round(" onclick="append(this.value)" style="font-size:10pt;">
         <input type="button" value="sqrt(" onclick="append(this.value)" style="font-size:10pt;">
-        <button type="button" onclick="toggleGraphMode(this)" style="font-size:10pt;" id="toggleGraphModeBtn">Graph</button>
-        <input type="button" onclick="append(this.value)" style="font-size:10pt;" class="x-variable-btn hide" value="X" title="function's X variable">
-        <input type="button" value="," onclick="append(this.value)">
+        <input type="button" value="BS" onclick="backspace()" style="font-size:10pt;">
         <input type="button" value="AC" onclick="clear_()">
 
-        <button type="button" onclick="drawGraph(this.value)" style="font-size:10pt;" class="draw-graph-btn hide" title="Draw function's graph"></button>
+        
 
         </div>
         <div class="buttons-container2">
