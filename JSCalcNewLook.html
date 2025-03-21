@@ -464,7 +464,7 @@ background-position: -5000px; } }
     }
 
     function backspace() {
-        document.getElementById('display').value="put backspace algo";
+        document.getElementById('display').value=document.getElementById('display').value.slice(0, -1);
     }
 
     function evaluate_() {
