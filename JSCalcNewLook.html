@@ -4,11 +4,16 @@
     <style>
     input[type="button"],
     button[type="button"]{
-        cursor:pointer;
-        border-radius:2px;
-        border:1px solid #999;
-        background:#FFFFFF;
-        box-shadow:inset 0 0 2px 0px #BBB,inset 0 0 6px 0px #DDD;
+        cursor: pointer;
+        border-radius: 2px;
+        border: 1px solid #999;
+        background: #FFFFFF;
+        box-shadow: inset 0 0 2px 0px #BBB, inset 0 0 6px 0px #DDD;
+        width: 90px;         /* Increase width */
+        height: 40px;        /* Increase height */
+        font-size: 17pt;     /* Larger text */
+        padding: 5px;        /* Add padding for more internal space */
+        font-weight: bold;           /* White text */
     }
     input[type="button"]:active,
     button[type="button"]:active{
@@ -30,7 +35,7 @@
     input[value="7"] {
     background-color: #000000; /* Red background */
     color: #FFFF00;
-    font-weight: bold;           /* White text */
+    
     }
     input[value="8"] {
     background-color: #000000; /* Red background */
@@ -313,19 +318,17 @@
     input[type="text"]:focus, textarea:focus{
         box-shadow:0 0 6px 0px #222;
     }
-    .buttons-container1{
-    
-        display: grid;
-        grid-template-columns:  63px 63px 63px 63px;
-        grid-template-rows: repeat(8, 24px);
-        grid-gap: 1px;
-    
-    }
-    .buttons-container2{    
+    .buttons-container1 {
     display: grid;
-        grid-template-columns:  63px 63px 63px 63px;
-        grid-template-rows: repeat(5, 30px);
-        grid-gap: 1px;
+    grid-template-columns: 90px 90px 90px 90px; /* 80px + 10px padding + 2px border */
+    grid-template-rows: repeat(8, 50px);        /* 40px + 10px padding + 2px border */
+    grid-gap: 1px;
+    }
+    .buttons-container2 {
+    display: grid;
+    grid-template-columns: 90px 90px 90px 90px;
+    grid-template-rows: repeat(5, 55px);
+    grid-gap: 1px;
     }
     .parent-container{
         display: flex;
@@ -735,44 +738,44 @@ function F4() {
         
         <div class="buttons-container1">
 
-        <input type="button" value="F1(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="F2(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="F3(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="F4(" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="F1(" onclick="append(this.value)" >
+        <input type="button" value="F2(" onclick="append(this.value)" >
+        <input type="button" value="F3(" onclick="append(this.value)" >
+        <input type="button" value="F4(" onclick="append(this.value)" >
 
-        <input type="button" value="(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value=")" onclick="append(this.value)" style="font-size:10pt;">
+        <input type="button" value="(" onclick="append(this.value)" >
+        <input type="button" value=")" onclick="append(this.value)" >
         <input type="button" value="," onclick="append(this.value)">        
         <button type="button" onclick="toggleGraphMode(this)" style="font-size:10pt;" id="toggleGraphModeBtn">Graph</button>
         <input type="button" onclick="append(this.value)" style="font-size:10pt;" class="x-variable-btn hide" value="X" title="function's X variable">
         <button type="button" onclick="drawGraph(this.value)" style="font-size:10pt;" class="draw-graph-btn hide" title="Draw function's graph"></button>
-        <input type="button" value="π" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="e" onclick="append('euler')" style="font-size:10pt;">
-        <input type="button" value="ln2" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="ln10" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="log2e" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="log10e" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="sqrt1_2" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="sqrt2" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="cos(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="sin(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="tan(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="acos(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="asin(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="atan(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="atan2(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="ceil(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="floor(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="abs(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="exp(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="log(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="min(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="max(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="pow(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="random(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="round(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="sqrt(" onclick="append(this.value)" style="font-size:10pt;">
-        <input type="button" value="BS" onclick="backspace()" style="font-size:10pt;">
+        <input type="button" value="π" onclick="append(this.value)" >
+        <input type="button" value="e" onclick="append('euler')" >
+        <input type="button" value="ln2" onclick="append(this.value)" >
+        <input type="button" value="ln10" onclick="append(this.value)" >
+        <input type="button" value="log2e" onclick="append(this.value)" >
+        <input type="button" value="log10e" onclick="append(this.value)" >
+        <input type="button" value="sqrt1_2" onclick="append(this.value)" >
+        <input type="button" value="sqrt2" onclick="append(this.value)" >
+        <input type="button" value="cos(" onclick="append(this.value)" >
+        <input type="button" value="sin(" onclick="append(this.value)" >
+        <input type="button" value="tan(" onclick="append(this.value)" >
+        <input type="button" value="acos(" onclick="append(this.value)" >
+        <input type="button" value="asin(" onclick="append(this.value)" >
+        <input type="button" value="atan(" onclick="append(this.value)" >
+        <input type="button" value="atan2(" onclick="append(this.value)" >
+        <input type="button" value="ceil(" onclick="append(this.value)" >
+        <input type="button" value="floor(" onclick="append(this.value)" >
+        <input type="button" value="abs(" onclick="append(this.value)" >
+        <input type="button" value="exp(" onclick="append(this.value)" >
+        <input type="button" value="log(" onclick="append(this.value)" >
+        <input type="button" value="min(" onclick="append(this.value)" >
+        <input type="button" value="max(" onclick="append(this.value)" >
+        <input type="button" value="pow(" onclick="append(this.value)" >
+        <input type="button" value="random(" onclick="append(this.value)" >
+        <input type="button" value="round(" onclick="append(this.value)" >
+        <input type="button" value="sqrt(" onclick="append(this.value)" >
+        <input type="button" value="BS" onclick="backspace()" >
         <input type="button" value="AC" onclick="clear_()">
 
         
